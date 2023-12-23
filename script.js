@@ -18,6 +18,16 @@ buttons.forEach((button) => {
 
         const circleElement = document.createElement('span');
         circleElement.classList.add('circle');
+
+        // Set coordindates to circle, so it shows in place where user click
+        circleElement.style.top = `${insideClickTop}px`;
+        circleElement.style.left = `${insideClickLeft}px`;
         button.append(circleElement);
+
+        // Delete added in DOM circles
+        setTimeout(() => {
+            circleElement.remove();
+        }, 1000);
+
     });
 });
